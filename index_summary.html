@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personal Expense Summary</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- YOUR CSS FILE -->
+    <link rel="stylesheet" href="style_summary.css">
+</head>
+
+
+<body>
+
+    <main class="container">
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="header">
+
+            <div class="header-left">
+
+                <p class="eyebrow">
+                    PERSONAL EXPENSE TRACKER
+                </p>
+
+                <h1>
+                    Expense Summary
+                </h1>
+
+                <p class="welcome">
+                    Hello, <span id="userName">Vidyashree.M</span> 👋
+                </p>
+
+                <p class="description">
+                    Here's a clear overview of your spending.
+                </p>
+
+            </div>
+
+
+            <div class="date-box">
+
+                <span class="calendar-icon">📅</span>
+
+                <div>
+                    <small>Date</small>
+                    <p id="currentDate">Loading...</p>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= SUMMARY CARDS ================= -->
+
+        <section class="summary-cards">
+
+
+            <!-- Total -->
+
+            <div class="summary-card">
+
+                <div class="card-icon purple">
+                    ₹
+                </div>
+
+                <div>
+                    <p>Total Spent</p>
+                    <h2 id="totalAmount">₹0</h2>
+                </div>
+
+            </div>
+
+
+            <!-- Number of expenses -->
+
+            <div class="summary-card">
+
+                <div class="card-icon blue">
+                    #
+                </div>
+
+                <div>
+                    <p>Expenses</p>
+                    <h2 id="expenseCount">0</h2>
+                </div>
+
+            </div>
+
+
+            <!-- Average -->
+
+            <div class="summary-card">
+
+                <div class="card-icon green">
+                    ↗
+                </div>
+
+                <div>
+                    <p>Average Expense</p>
+                    <h2 id="averageAmount">₹0</h2>
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= CHARTS ================= -->
+
+        <section class="charts-grid">
+
+
+            <!-- DONUT -->
+
+            <div class="chart-card">
+
+                <div class="chart-heading">
+
+                    <div>
+
+                        <h3>
+                            Spending Distribution
+                        </h3>
+
+                        <p>
+                            Where your money is going
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="donut-container">
+
+                    <canvas id="donutChart"></canvas>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BAR -->
+
+            <div class="chart-card">
+
+                <div class="chart-heading">
+
+                    <div>
+
+                        <h3>
+                            Category Comparison
+                        </h3>
+
+                        <p>
+                            Compare your spending categories
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bar-container">
+
+                    <canvas id="barChart"></canvas>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= EXPENSE TABLE ================= -->
+
+        <section class="details-card">
+
+            <div class="section-heading">
+
+                <h3>
+                    Expense Details
+                </h3>
+
+                <p>
+                    A breakdown of your recorded expenses
+                </p>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>#</th>
+
+                            <th>Category</th>
+
+                            <th>Amount</th>
+
+                            <th>Percentage</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="expenseTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= INSIGHT ================= -->
+
+        <section class="insight-card">
+
+            <div class="insight-icon">
+                💡
+            </div>
+
+
+            <div>
+
+                <p class="insight-title">
+                    Quick Insight
+                </p>
+
+                <p id="insightText">
+                    Calculating your spending insight...
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= BUTTON ================= -->
+
+        <div class="action-section">
+
+            <button
+                class="new-button"
+                onclick="startNewCalculation()">
+
+                + Start New Calculation
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            Personal Expense Calculator • PBL Project
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- ================= CHART.JS ================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- ================= YOUR JAVASCRIPT ================= -->
+
+    <script src="script_summary.js"></script>
+
+
+</body>
+
+</html>
